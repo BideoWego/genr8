@@ -11,7 +11,7 @@ Genr8 is a [DIY](https://en.wikipedia.org/wiki/Do_it_yourself) generator written
 1. Create a symlink with `ln -s /path/to/genr8/index.sh /usr/local/bin/genr8`
 
 
-## Running the Express Generator
+## The Express Generator
 
 Genr8 comes with a single generator for [Express](https://expressjs.com) applications.
 
@@ -25,7 +25,25 @@ Please specify a generator from the list:
 ```
 
 
+### Running the Generator
+
 Running `$ genr8 express` will start the generator. It will create boilerplate files and folders for an Express application with [Handlebars](http://handlebarsjs.com) as the view engine.
+
+
+### Generated Files and Folders
+
+Here is a quick outline of what the generator creates and the purpose in mind for each file and folder.
+
+* `config/` - A place to put config files for connecting to databases etc...
+* `helpers/` - A directory in which files suffixed with `_helper.js` will be automatically loaded. Helper functions in these files will be available in views. Comes with some common helpers out of the box
+* `lib/` - Put your own libraries here
+* `models/` - Model files and folders
+* `public/` - Express uses this folder to serve static assets
+* `routers/` - Router files go here
+* `views/` - A place to put view templates. Comes populated with a default layout, welcome page and 500 error page
+* `.gitignore` - Ignores `node_modules/` and `npm-debug.log` by default. Add files for Git to ignore here
+* `app.js` - The main Express application file
+* `repl.js` - A REPL for you to test drive your code. Require modules, libraries etc... here to play around and test them out
 
 
 ## Creating Generators
