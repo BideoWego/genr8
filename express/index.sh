@@ -2,49 +2,17 @@
 
 
 echo "Generating new Express app..."
-echo
-
-
-DIRECTORIES=(
-  config
-  helpers
-  lib
-  models
-  public
-  public/assets
-  routers
-  views
-  views/errors
-  views/layouts
-  views/shared
-  views/welcome
-)
-
-echo "Creating files and directories..."
-echo
-for D in "${DIRECTORIES[@]}"
-do
-  mkdir $D
-  touch $D/.keep
-  echo "  Created $D directory"
-done
 
 
 DIR=$(dirname $(readlink $(which genr8)))
 DIR="$DIR/express/boilerplate"
 
-echo "Writing to files..."
-echo
+echo "Creating files and folders..."
 
-cat $DIR/app.js > ./app.js
-cat $DIR/gitignore.sh > ./.gitignore
-cat $DIR/helpers.js > ./helpers/index.js
-cat $DIR/layout.handlebars > ./views/layouts/application.handlebars
-cat $DIR/500.handlebars > ./views/errors/500.handlebars
-cat $DIR/welcome.handlebars > ./views/welcome/index.handlebars
-
+cp -a $DIR/. .
 
 echo "Initializing NPM project..."
+echo "---------------------------"
 echo
 npm init
 
@@ -57,6 +25,7 @@ PACKAGES=(
   express-handlebars
   express-method-override-get-post-support
   load-helpers
+  lodash
   method-override
   morgan
   morgan-toolkit
@@ -64,6 +33,7 @@ PACKAGES=(
 
 echo
 echo "Installing packages with NPM..."
+echo "-------------------------------"
 echo
 npm install --save ${PACKAGES[@]}
 
