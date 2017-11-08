@@ -1,6 +1,8 @@
 Genr8
 =====
 
+![Generator](genr8.jpg)
+
 
 Genr8 is a [DIY](https://en.wikipedia.org/wiki/Do_it_yourself) generator written in Bash. Use it to help you generate boilerplate for your applications.
 
