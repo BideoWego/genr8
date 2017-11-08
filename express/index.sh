@@ -4,18 +4,22 @@
 echo "Generating new Express app..."
 
 
+echo "Creating files and folders..."
 DIR=$(dirname $(readlink $(which genr8)))
 DIR="$DIR/express/boilerplate"
-
-echo "Creating files and folders..."
-
 cp -a $DIR/. .
+
 
 echo "Initializing NPM project..."
 echo "---------------------------"
 echo
 npm init
 
+
+echo
+echo "Installing packages with NPM..."
+echo "-------------------------------"
+echo
 PACKAGES=(
   body-parser
   cookie-session
@@ -30,11 +34,6 @@ PACKAGES=(
   morgan
   morgan-toolkit
 )
-
-echo
-echo "Installing packages with NPM..."
-echo "-------------------------------"
-echo
 npm install --save ${PACKAGES[@]}
 
 
