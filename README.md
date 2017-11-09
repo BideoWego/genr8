@@ -10,6 +10,7 @@ Genr8 is a [DIY](https://en.wikipedia.org/wiki/Do_it_yourself) generator written
 ## Installation
 
 1. Clone the repo anywhere on your machine
+    - **Note** If you want to be able to create your own generators and merge upstream updates, fork and clone the repo.
 1. Create a symlink with `ln -s /path/to/genr8/index.sh /usr/local/bin/genr8`
 
 
