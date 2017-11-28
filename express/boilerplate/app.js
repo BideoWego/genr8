@@ -88,6 +88,7 @@ app.use(morganToolkit());
 // Routes
 // ----------------------------------------
 app.use('/', (req, res) => {
+  req.flash('Hi!');
   res.render('welcome/index');
 });
 
