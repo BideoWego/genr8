@@ -4,34 +4,34 @@
 const UtilsHelper = {};
 
 
-UtilsHelper.concat = (...args) => {
-  return args.slice(0, -1).join('');
-};
+UtilsHelper.concat = (...args) => args.slice(0, -1).join('');
 
 
-UtilsHelper.join = (str, ...args) => {
-  return args.slice(0, -1).join(str);
-};
+UtilsHelper.join = (str, ...args) => args.slice(0, -1).join(str);
 
 
-UtilsHelper.debug = (obj) => {
-  return `<pre>${ JSON.stringify(obj, null, 2) }</pre>`;
-};
+UtilsHelper.debug = obj => `<pre>${ JSON.stringify(obj, null, 2) }</pre>`;
 
 
-UtilsHelper.json = (obj) => {
-  return JSON.stringify(obj, null, 2);
-};
+UtilsHelper.json = obj => JSON.stringify(obj, null, 2);
 
 
-UtilsHelper.eq = (a, b) => {
-  return a == b;
-};
+UtilsHelper.eq = (a, b) => a == b;
 
 
-UtilsHelper.eql = (a, b) => {
-  return a === b;
-};
+UtilsHelper.eql = (a, b) => a === b;
+
+
+UtilsHelper.gt = (a, b) => a > b;
+
+
+UtilsHelper.gte = (a, b) => a >= b;
+
+
+UtilsHelper.lt = (a, b) => a < b;
+
+
+UtilsHelper.lte = (a, b) => a <= b;
 
 
 UtilsHelper.times = function(n, options) {
