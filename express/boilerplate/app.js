@@ -30,7 +30,7 @@ app.use(cookieSession({
 }));
 
 app.use((req, res, next) => {
-  app.locals.session = req.session;
+  res.locals.session = req.session;
   next();
 });
 
