@@ -79,6 +79,18 @@ DIR=$(dirname $(readlink $(which genr8)))
 ```
 
 
+## TODOs [Unreleased]
+
+- Add helpers similar to Rails http://api.rubyonrails.org/ for the following:
+    - Asset tag/URL helpers
+    - Date
+    - Debug
+    - Number
+    - Sanitize
+    - Text
+- Tests for generated application (Mocha or Jasmine)
+
+
 ## License
 
 Copyright 2017 Chris Scavello <bideowego@gmail.com>
