@@ -1,7 +1,7 @@
 const BootstrapHelper = {};
 
 
-BootstrapHelper.glyphicon = (type) => {
+BootstrapHelper.glyphicon = type => {
   return `<span
     class="glyphicon
     glyphicon-${ type }"

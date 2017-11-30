@@ -16,7 +16,7 @@ repl.context.lodash = lodash;
 // Helpers
 // ----------------------------------------
 repl.context.helpers = helpers;
-Object.keys(helpers).forEach((key) => {
+Object.keys(helpers).forEach(key => {
   repl.context[key] = helpers[key];
 });
 

@@ -1,7 +1,7 @@
 const FlashHelper = {};
 
 
-FlashHelper.bootstrapAlertClassFor = function(key) {
+FlashHelper.bootstrapAlertClassFor = key => {
   return {
     "error": "danger",
     "alert": "danger",
