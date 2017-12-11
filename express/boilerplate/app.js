@@ -26,8 +26,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // ----------------------------------------
 // Sessions/Cookies
 // ----------------------------------------
+const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 
+app.use(cookieParser());
 app.use(cookieSession({
   name: 'session',
   keys: [
@@ -79,7 +81,9 @@ app.use(express.static(`${__dirname}/public`));
 // Logging
 // ----------------------------------------
 const morgan = require('morgan');
-const morganToolkit = require('morgan-toolkit')(morgan);
+const morganToolkit = require('morgan-toolkit')(morgan, {
+  req: ['cookies'/*, 'signedCookies' */]
+});
 
 app.use(morganToolkit());
 
