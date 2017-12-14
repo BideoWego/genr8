@@ -22,6 +22,7 @@ echo "-------------------------------"
 echo
 PACKAGES=(
   body-parser
+  cookie-parser
   cookie-session
   dotenv
   express
