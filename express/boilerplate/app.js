@@ -21,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
 // ----------------------------------------
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 
 // ----------------------------------------
@@ -81,9 +82,7 @@ app.use(express.static(`${__dirname}/public`));
 // Logging
 // ----------------------------------------
 const morgan = require('morgan');
-const morganToolkit = require('morgan-toolkit')(morgan, {
-  req: ['cookies'/*, 'signedCookies' */]
-});
+const morganToolkit = require('morgan-toolkit')(morgan);
 
 app.use(morganToolkit());
 
@@ -121,10 +120,9 @@ const port = process.env.PORT ||
   3000;
 const host = 'localhost';
 
-let args;
-process.env.NODE_ENV === 'production' ?
-  args = [port] :
-  args = [port, host];
+const args = process.env.NODE_ENV === 'production' ?
+  [port] :
+  [port, host];
 
 args.push(() => {
   console.log(`Listening: http://${ host }:${ port }\n`);
