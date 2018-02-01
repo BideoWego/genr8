@@ -82,6 +82,7 @@ DIR=$(dirname $(readlink $(which genr8)))
 
 ## TODOs [Unreleased]
 
+- Add Express JSON API generator for API only back-end
 - Add helpers similar to Rails http://api.rubyonrails.org/ for the following:
     - Asset tag/URL helpers
     - Date
