@@ -144,6 +144,13 @@ app.use((err, req, res, next) => {
   if (err.stack) {
     err = err.stack;
   }
+
+  console.error(err);
+
+  if (process.env.NODE_ENV === 'production') {
+    err = 'An application server error has occurred. See the server logs.';
+  }
+
   res.status(500).render('errors/500', { error: err });
 });
 

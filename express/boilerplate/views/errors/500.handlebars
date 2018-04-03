@@ -3,12 +3,7 @@
   <header class="page-header text-center">
     <h1 class="text-danger">Error: 500 - Oh Noes!</h1>
   </header>
-  <hr>
-  <pre>{{ error }}</pre>
+  {{#if error }}
+    <pre>{{ error }}</pre>
+  {{/if }}
 </main>
-
-
-
-
-
-
