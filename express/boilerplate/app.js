@@ -68,6 +68,7 @@ app.use(methodOverride(
 // ----------------------------------------
 app.use((req, res, next) => {
   req.session.backUrl = req.header('Referer') || '/';
+  res.locals.backUrl = req.session.backUrl;
   next();
 });
 
@@ -136,6 +137,10 @@ if (require.main === module) {
 // ----------------------------------------
 // Error Handling
 // ----------------------------------------
+app.use((req, res) => {
+  res.status(404).render('errors/404');
+});
+
 app.use((err, req, res, next) => {
   if (res.headersSent) {
     return next(err);
