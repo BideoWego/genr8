@@ -91,6 +91,7 @@ DIR=$(dirname $(readlink $(which genr8)))
     - Sanitize
     - Text
 - Tests for generated application (Mocha or Jasmine)
+- Add AngularJS 1.x generator
 
 
 ## License
